@@ -23,7 +23,7 @@ public class StrategyAward {
     /** 抽奖奖品标题 **/
     private String awardTile;
     /** 抽奖奖品副标题 **/
-    private String awardSubTile;
+    private String awardSubTitle;
     /** 奖品库存总量 **/
     private Integer awardCount;
     /** 奖品库存剩余 **/

@@ -7,7 +7,7 @@
         <result column="strategy_id" property="strategyId"/>
         <result column="award_id" property="awardId"/>
         <result column="award_tile" property="awardTile"/>
-        <result column="award_subtile" property="awardSubTile"/>
+        <result column="award_subtitle" property="awardSubTitle"/>
         <result column="award_count" property="awardCount"/>
         <result column="award_count_surplus" property="awardCountSurplus"/>
         <result column="rule_models" property="ruleModels"/>
@@ -21,6 +21,11 @@
         SELECT strategy_id
         FROM strategy_award
         limit 0,10
+    </select>
+    <select id="queryStrategyAwardListByStrategyId" parameterType="java.lang.Long" resultMap="dataMap">
+        select strategy_id,award_id,award_count,award_count_surplus,award_rate
+        from strategy_award
+        where strategy_id = #{strategy_id}
     </select>
 
 </mapper>
