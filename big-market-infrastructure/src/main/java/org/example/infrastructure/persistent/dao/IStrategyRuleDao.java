@@ -1,6 +1,7 @@
 package org.example.infrastructure.persistent.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.example.infrastructure.persistent.po.Award;
 import org.example.infrastructure.persistent.po.StrategyRule;
 
@@ -18,4 +19,6 @@ public interface IStrategyRuleDao {
     public List<Award> queryStrategyRuleList();
 
     StrategyRule queryStrategyRule(StrategyRule strategyRuleReq);
+
+    String queryStrategyRuleValue(StrategyRule strategyRule);
 }
