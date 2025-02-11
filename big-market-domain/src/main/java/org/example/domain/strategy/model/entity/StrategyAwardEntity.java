@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class StrategyAwardEntity {
     /** 抽奖策略id **/
-    private Integer strategyId;
+    private Long strategyId;
     /** 抽奖奖品id **/
     private Integer awardId;
     /** 奖品库存总量 **/

@@ -1,7 +1,7 @@
 package org.example.domain.strategy.model.entity;
 
 import lombok.*;
-import org.example.domain.strategy.model.vo.RuleLogicCheckTypeVo;
+import org.example.domain.strategy.model.valobj.RuleLogicCheckTypeVo;
 
 /**
  * @Classname RuleActionEntity

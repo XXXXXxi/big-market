@@ -23,7 +23,7 @@ import java.util.Date;
 public class StrategyEntity {
 
     /** 抽奖策略id **/
-    private Integer strategyId;
+    private Long strategyId;
     /** 抽奖策略描述 **/
     private String strategyDesc;
     /** 抽奖规则模型 **/
@@ -36,6 +36,8 @@ public class StrategyEntity {
 
     public String getRuleWeight() {
         String[] ruleModels = this.ruleModels();
+        if (ruleModels == null || 0 == ruleModels.length)
+            return null;
         for (String ruleModel : ruleModels) {
             if ("rule_weight".equals(ruleModel)) return ruleModel;
         }

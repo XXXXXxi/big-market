@@ -17,7 +17,7 @@ public class Strategy {
     /** 自增id **/
     private Integer id;
     /** 抽奖策略id **/
-    private Integer strategyId;
+    private Long strategyId;
     /** 抽奖策略描述 **/
     private String strategyDesc;
     /** 创建时间 **/
