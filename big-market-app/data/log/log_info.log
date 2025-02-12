@@ -225,3 +225,13 @@
 25-02-12.22:03:50.289 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":103}
 25-02-12.22:03:50.306 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-02-12.22:03:50.313 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-02-12.23:24:52.171 [main            ] INFO  LogicTreeTest          - Starting LogicTreeTest using Java 1.8.0_202 on X with PID 29956 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-12.23:24:52.178 [main            ] INFO  LogicTreeTest          - The following 1 profile is active: "dev"
+25-02-12.23:24:53.832 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-12.23:24:54.498 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-12.23:24:54.505 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-12.23:24:55.157 [main            ] INFO  LogicTreeTest          - Started LogicTreeTest in 3.259 seconds (JVM running for 3.967)
+25-02-12.23:24:55.314 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】 treeId:100000001 node:rule_lock code:0000
+25-02-12.23:24:55.315 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】 treeId:100000001 node:rule_stock code:0001
+25-02-12.23:24:55.316 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】 treeId:100000001 node:rule_luck_award code:0001
+25-02-12.23:24:55.413 [main            ] INFO  LogicTreeTest          - 测试结果：{"awardId":101,"awardRuleValue":"1,100"}
