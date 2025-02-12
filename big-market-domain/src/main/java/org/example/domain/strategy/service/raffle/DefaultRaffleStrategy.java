@@ -1,4 +1,4 @@
-package org.example.domain.strategy.service.ruffle;
+package org.example.domain.strategy.service.raffle;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -8,8 +8,9 @@ import org.example.domain.strategy.model.entity.RuleMatterEntity;
 import org.example.domain.strategy.model.valobj.RuleLogicCheckTypeVo;
 import org.example.domain.strategy.repository.IStrategyRepository;
 import org.example.domain.strategy.service.armory.IStrategyDispatch;
-import org.example.domain.strategy.service.rule.ILogicFilter;
-import org.example.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import org.example.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import org.example.domain.strategy.service.rule.filter.ILogicFilter;
+import org.example.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -31,8 +32,8 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy{
     @Resource
     private DefaultLogicFactory logicFactory;
 
-    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch) {
-        super(repository, strategyDispatch);
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory) {
+        super(repository, strategyDispatch,defaultChainFactory);
     }
 
     @Override

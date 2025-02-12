@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import org.example.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import org.example.types.common.Constants;
 
 import java.util.ArrayList;
@@ -28,6 +28,7 @@ public class StrategyAwardRuleModelVo {
 
     public String[] raffleCenterRuleModelList() {
         List<String> ruleModelList = new ArrayList<>();
+        if (null == ruleModels) return null;
         String[] ruleModelValues = ruleModels.split(Constants.SPLIT);
         for (String ruleModelValue : ruleModelValues) {
             if (DefaultLogicFactory.LogicModel.isCenter(ruleModelValue)) {
