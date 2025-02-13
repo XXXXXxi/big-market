@@ -46,6 +46,7 @@ public class RaffleStrategyTest {
     public void setUp() {
         log.info("测试结果: {}", strategyArmory.assembleLotteryStrategy(10001L));
         log.info("测试结果: {}", strategyArmory.assembleLotteryStrategy(10003L));
+        log.info("测试结果: {}", strategyArmory.assembleLotteryStrategy(100006L));
 
         ReflectionTestUtils.setField(ruleWeightLogicFilter,"userScore",4500L);
         ReflectionTestUtils.setField(ruleLockLogicFilter,"userRaffleCount",7L);
@@ -55,7 +56,7 @@ public class RaffleStrategyTest {
     public void test_performRaffle() {
         RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
                 .userId("xx")
-                .strategyId(10001L)
+                .strategyId(100006L)
                 .build();
 
         RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(raffleFactorEntity);

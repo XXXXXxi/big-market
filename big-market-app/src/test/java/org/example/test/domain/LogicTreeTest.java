@@ -35,13 +35,13 @@ public class LogicTreeTest {
 
         // 构建参数
         RuleTreeNodeVo rule_lock = RuleTreeNodeVo.builder()
-                .treeId(100000001)
+                .treeId("100000001")
                 .ruleKey("rule_lock")
                 .ruleDesc("限定用户已完成N次抽奖后解锁")
                 .ruleValue("1")
                 .treeNodeLineVoList(new ArrayList<RuleTreeNodeLineVo>() {{
                     add(RuleTreeNodeLineVo.builder()
-                            .treeId(100000001)
+                            .treeId("100000001")
                             .ruleNodeFrom("rule_lock")
                             .ruleNodeTo("rule_luck_award")
                             .ruleLimitType(RuleLimitTypeVo.EQUAL)
@@ -49,7 +49,7 @@ public class LogicTreeTest {
                             .build());
 
                     add(RuleTreeNodeLineVo.builder()
-                            .treeId(100000001)
+                            .treeId("100000001")
                             .ruleNodeFrom("rule_lock")
                             .ruleNodeTo("rule_stock")
                             .ruleLimitType(RuleLimitTypeVo.EQUAL)
@@ -59,7 +59,7 @@ public class LogicTreeTest {
                 .build();
 
         RuleTreeNodeVo rule_luck_award = RuleTreeNodeVo.builder()
-                .treeId(100000001)
+                .treeId("100000001")
                 .ruleKey("rule_luck_award")
                 .ruleDesc("限定用户已完成N次抽奖后解锁")
                 .ruleValue("1")
@@ -67,13 +67,13 @@ public class LogicTreeTest {
                 .build();
 
         RuleTreeNodeVo rule_stock = RuleTreeNodeVo.builder()
-                .treeId(100000001)
+                .treeId("100000001")
                 .ruleKey("rule_stock")
                 .ruleDesc("库存处理规则")
                 .ruleValue(null)
                 .treeNodeLineVoList(new ArrayList<RuleTreeNodeLineVo>() {{
                     add(RuleTreeNodeLineVo.builder()
-                            .treeId(100000001)
+                            .treeId("100000001")
                             .ruleNodeFrom("rule_lock")
                             .ruleNodeTo("rule_luck_award")
                             .ruleLimitType(RuleLimitTypeVo.EQUAL)
@@ -83,7 +83,7 @@ public class LogicTreeTest {
                 .build();
 
         RuleTreeVo ruleTreeVO = new RuleTreeVo();
-        ruleTreeVO.setTreeId(100000001);
+        ruleTreeVO.setTreeId("100000001");
         ruleTreeVO.setTreeName("决策树规则；增加dall-e-3画图模型");
         ruleTreeVO.setTreeDesc("决策树规则；增加dall-e-3画图模型");
         ruleTreeVO.setTreeRootRuleNode("rule_lock");
@@ -96,7 +96,7 @@ public class LogicTreeTest {
 
         IDecisionTreeEngine treeEngine = defaultTreeFactory.openLogicTree(ruleTreeVO);
 
-        DefaultTreeFactory.StrategyAwardData data = treeEngine.process("xxx", 100001L, 100);
+        DefaultTreeFactory.StrategyAwardVo data = treeEngine.process("xxx", 100001L, 100);
         log.info("测试结果：{}", JSON.toJSONString(data));
 
 

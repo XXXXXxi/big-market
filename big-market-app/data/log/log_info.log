@@ -1,237 +1,44 @@
-25-02-12.21:55:09.805 [main            ] INFO  LogicChainTest         - Starting LogicChainTest using Java 1.8.0_202 on X with PID 32724 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.21:55:09.806 [main            ] INFO  LogicChainTest         - The following 1 profile is active: "dev"
-25-02-12.21:55:11.543 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.21:55:12.218 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.21:55:12.226 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.21:55:12.995 [main            ] INFO  LogicChainTest         - Started LogicChainTest in 3.461 seconds (JVM running for 4.301)
-25-02-12.21:55:13.229 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.21:55:13.962 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.21:55:14.321 [main            ] INFO  LogicChainTest         - 测试结果: true
-25-02-12.21:55:14.331 [main            ] INFO  LogicChainTest         - 测试结果: true
-25-02-12.21:55:14.333 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:user001 strategyId:10001 ruleModel:rule_weight
-25-02-12.21:55:14.351 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:user001 strategyId:10001 ruleModel:rule_weight
-25-02-12.21:55:14.352 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.21:55:14.353 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.21:55:14.353 [main            ] INFO  LogicChainTest         - 测试结果: 100
-25-02-12.21:55:14.398 [main            ] INFO  LogicChainTest         - 测试结果: true
-25-02-12.21:55:14.400 [main            ] INFO  LogicChainTest         - 测试结果: true
-25-02-12.21:55:14.402 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xxx strategyId:10001 ruleModel:rule_weight
-25-02-12.21:55:14.404 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重接管 userId:xxx strategyId:10001 ruleModel:rule_weight awardId:102
-25-02-12.21:55:14.404 [main            ] INFO  LogicChainTest         - 测试结果: 102
-25-02-12.21:55:14.421 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.21:55:14.430 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.21:58:34.136 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 33220 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.21:58:34.136 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.21:58:35.667 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.21:58:36.305 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.21:58:36.312 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.21:58:36.982 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.105 seconds (JVM running for 3.746)
-25-02-12.21:58:37.237 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.21:58:37.950 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.21:58:38.083 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.21:58:38.086 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.21:58:38.089 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:user001 strategyId:10001 ruleModel:rule_weight
-25-02-12.21:58:38.103 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:user001 strategyId:10001 ruleModel:rule_weight
-25-02-12.21:58:38.103 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.21:58:38.104 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.21:58:38.145 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.21:58:38.148 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.21:58:38.150 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 107
-25-02-12.21:58:38.150 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.21:58:38.153 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.21:58:38.263 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10003,"userId":"user001"}
-25-02-12.21:58:38.264 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":107}
-25-02-12.21:58:38.293 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.21:58:38.296 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.21:58:38.296 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.21:58:38.298 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.21:58:38.298 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.21:58:38.299 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.21:58:38.300 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 10001 ruleModel: default awardId: 103
-25-02-12.21:58:38.300 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"xx"}
-25-02-12.21:58:38.300 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":103}
-25-02-12.21:58:38.315 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.21:58:38.323 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.22:00:17.216 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 12124 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.22:00:17.216 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.22:00:18.783 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.22:00:19.445 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:00:19.457 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:00:20.287 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.316 seconds (JVM running for 4.0)
-25-02-12.22:00:20.445 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.22:00:21.182 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.22:00:21.437 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:00:21.446 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:00:21.455 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:00:21.473 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.22:00:21.515 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:00:21.517 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:00:21.519 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 109
-25-02-12.22:00:21.520 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.22:00:21.523 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.22:00:21.635 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10003,"userId":"user001"}
-25-02-12.22:00:21.636 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":109}
-25-02-12.22:00:21.673 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:00:21.676 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:00:21.677 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:00:21.679 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:00:21.679 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:00:21.680 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:00:21.682 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 10001 ruleModel: default awardId: 104
-25-02-12.22:00:21.683 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"xx"}
-25-02-12.22:00:21.683 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":104}
-25-02-12.22:00:21.702 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.22:00:21.711 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.22:01:33.104 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 34424 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.22:01:33.105 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.22:01:34.693 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.22:01:35.383 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:01:35.390 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:01:36.269 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.416 seconds (JVM running for 4.041)
-25-02-12.22:01:36.565 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.22:01:37.259 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.22:01:37.393 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:01:37.397 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:01:37.401 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:01:37.418 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.22:01:37.463 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:01:37.464 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:01:37.466 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 108
-25-02-12.22:01:37.467 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.22:01:37.470 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.22:01:37.580 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10003,"userId":"user001"}
-25-02-12.22:01:37.584 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":108}
-25-02-12.22:01:37.615 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:01:37.617 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:01:37.618 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:01:37.619 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:01:37.619 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:01:37.620 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:01:37.623 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 10001 ruleModel: default awardId: 101
-25-02-12.22:01:37.642 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.22:01:37.650 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.22:02:03.873 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 23504 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.22:02:03.874 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.22:02:05.623 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.22:02:06.309 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:02:06.315 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:02:07.264 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.684 seconds (JVM running for 4.627)
-25-02-12.22:02:07.614 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.22:02:08.508 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.22:02:08.556 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:08.560 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:08.564 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:02:08.583 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.22:02:21.025 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:21.027 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:21.030 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 108
-25-02-12.22:02:21.030 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.22:02:21.033 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.22:02:21.050 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.22:02:21.070 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.22:02:39.196 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 8216 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.22:02:39.197 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.22:02:40.816 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.22:02:41.492 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:02:41.500 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:02:42.336 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.406 seconds (JVM running for 4.066)
-25-02-12.22:02:42.626 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.22:02:43.363 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.22:02:43.410 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:43.415 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:43.419 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:02:43.440 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.22:02:43.655 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"user001"}
-25-02-12.22:02:43.658 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":100}
-25-02-12.22:02:43.697 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:43.699 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:43.700 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 107
-25-02-12.22:02:43.702 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.22:02:43.703 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.22:02:43.703 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10003,"userId":"user001"}
-25-02-12.22:02:43.703 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":107}
-25-02-12.22:02:43.730 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:43.732 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:02:43.733 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:02:43.734 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:02:43.734 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:02:43.735 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:02:43.737 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 10001 ruleModel: default awardId: 102
-25-02-12.22:02:43.738 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"xx"}
-25-02-12.22:02:43.738 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":102}
-25-02-12.22:02:43.755 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.22:02:43.763 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.22:03:37.637 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 31704 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.22:03:37.638 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.22:03:39.128 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.22:03:39.770 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:03:39.777 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:03:40.490 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.092 seconds (JVM running for 3.691)
-25-02-12.22:03:40.813 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.22:03:41.524 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.22:03:41.656 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:41.659 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:41.662 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:03:41.680 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.22:03:41.772 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"user001"}
-25-02-12.22:03:41.775 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":100}
-25-02-12.22:03:41.809 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:41.811 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:41.812 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 107
-25-02-12.22:03:41.813 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.22:03:41.814 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.22:03:41.814 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10003,"userId":"user001"}
-25-02-12.22:03:41.814 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":107}
-25-02-12.22:03:41.842 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:41.844 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:41.844 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:03:41.845 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:03:41.846 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:03:41.847 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:03:41.847 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 10001 ruleModel: default awardId: 103
-25-02-12.22:03:41.848 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"xx"}
-25-02-12.22:03:41.848 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":103}
-25-02-12.22:03:41.861 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.22:03:41.867 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.22:03:46.076 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 5108 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.22:03:46.076 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-02-12.22:03:47.595 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.22:03:48.261 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:03:48.269 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.22:03:48.947 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.11 seconds (JVM running for 3.721)
-25-02-12.22:03:49.262 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-12.22:03:49.957 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-12.22:03:50.087 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:50.092 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:50.097 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:user001 strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:03:50.113 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管 userId:user001 strategyId:10001 ruleModel:rule_blacklist awardId:100
-25-02-12.22:03:50.211 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"user001"}
-25-02-12.22:03:50.213 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":100}
-25-02-12.22:03:50.250 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:50.253 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:50.254 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：user001 strategyId: 10003 ruleModel: default awardId: 107
-25-02-12.22:03:50.256 [main            ] INFO  RuleLockLogicFilter    - 规则过滤 - 次数锁 userId:user001 strategyId:10003 ruleModel:rule_lock
-25-02-12.22:03:50.257 [main            ] INFO  DefaultRaffleStrategy  - 抽奖前规则过滤 userId：user001 ruleModel：rule_lock code：0000 info:放行；执行后续的流程，不受规则引擎影响
-25-02-12.22:03:50.257 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10003,"userId":"user001"}
-25-02-12.22:03:50.257 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":107}
-25-02-12.22:03:50.283 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:50.285 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
-25-02-12.22:03:50.285 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:03:50.286 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行 userId:xx strategyId:10001 ruleModel:rule_blacklist
-25-02-12.22:03:50.286 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重开始 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:03:50.287 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重放行 userId:xx strategyId:10001 ruleModel:rule_weight
-25-02-12.22:03:50.288 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 10001 ruleModel: default awardId: 103
-25-02-12.22:03:50.289 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":10001,"userId":"xx"}
-25-02-12.22:03:50.289 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardId":103}
-25-02-12.22:03:50.306 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-12.22:03:50.313 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-02-12.23:24:52.171 [main            ] INFO  LogicTreeTest          - Starting LogicTreeTest using Java 1.8.0_202 on X with PID 29956 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
-25-02-12.23:24:52.178 [main            ] INFO  LogicTreeTest          - The following 1 profile is active: "dev"
-25-02-12.23:24:53.832 [main            ] INFO  Version                - Redisson 3.23.4
-25-02-12.23:24:54.498 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.23:24:54.505 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-02-12.23:24:55.157 [main            ] INFO  LogicTreeTest          - Started LogicTreeTest in 3.259 seconds (JVM running for 3.967)
-25-02-12.23:24:55.314 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】 treeId:100000001 node:rule_lock code:0000
-25-02-12.23:24:55.315 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】 treeId:100000001 node:rule_stock code:0001
-25-02-12.23:24:55.316 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】 treeId:100000001 node:rule_luck_award code:0001
-25-02-12.23:24:55.413 [main            ] INFO  LogicTreeTest          - 测试结果：{"awardId":101,"awardRuleValue":"1,100"}
+25-02-14.00:00:05.852 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 23892 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-14.00:00:05.853 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-02-14.00:00:07.391 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-14.00:00:08.051 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-14.00:00:08.058 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-14.00:00:08.703 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.089 seconds (JVM running for 3.653)
+25-02-14.00:00:08.844 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-14.00:00:09.592 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-14.00:00:09.828 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
+25-02-14.00:00:09.834 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
+25-02-14.00:00:09.840 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
+25-02-14.00:00:09.849 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 100006 ruleModel: rule_default awardId: 102
+25-02-14.00:00:09.849 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xx 100006 102 rule_default
+25-02-14.00:00:09.940 [main            ] INFO  StrategyRepository     - tree_node_line 转为 Map ：{"rule_lock":[{"ruleLimitType":"EQUAL","ruleLimitValue":"ALLOW","ruleNodeFrom":"rule_lock","ruleNodeTo":"rule_stock","treeId":"tree_lock"},{"ruleLimitType":"EQUAL","ruleLimitValue":"TAKE_OVER","ruleNodeFrom":"rule_lock","ruleNodeTo":"rule_luck_award","treeId":"tree_lock"}],"rule_stock":[{"ruleLimitType":"EQUAL","ruleLimitValue":"TAKE_OVER","ruleNodeFrom":"rule_stock","ruleNodeTo":"rule_luck_award","treeId":"tree_lock"}]}
+25-02-14.00:00:09.944 [main            ] INFO  StrategyRepository     - tree_node 转为 Map ：{"rule_lock":{"ruleDesc":"限定用户已完成N次抽奖后解锁","ruleKey":"rule_lock","ruleValue":"1","treeId":"tree_lock","treeNodeLineVoList":[{"ruleLimitType":"EQUAL","ruleLimitValue":"ALLOW","ruleNodeFrom":"rule_lock","ruleNodeTo":"rule_stock","treeId":"tree_lock"},{"ruleLimitType":"EQUAL","ruleLimitValue":"TAKE_OVER","ruleNodeFrom":"rule_lock","ruleNodeTo":"rule_luck_award","treeId":"tree_lock"}]},"rule_stock":{"ruleDesc":"库存扣减规则","ruleKey":"rule_stock","treeId":"tree_lock","treeNodeLineVoList":[{"ruleLimitType":"EQUAL","ruleLimitValue":"TAKE_OVER","ruleNodeFrom":"rule_stock","ruleNodeTo":"rule_luck_award","treeId":"tree_lock"}]},"rule_luck_award":{"ruleDesc":"兜底奖品随机积分","ruleKey":"rule_luck_award","ruleValue":"1,100","treeId":"tree_lock"}}
+25-02-14.00:00:09.948 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】 treeId:tree_lock node:rule_lock code:0000
+25-02-14.00:00:09.948 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】 treeId:tree_lock node:rule_stock code:0001
+25-02-14.00:00:09.949 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】 treeId:tree_lock node:rule_luck_award code:0001
+25-02-14.00:00:09.949 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xx 100006 101 1,100
+25-02-14.00:00:09.952 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":100006,"userId":"xx"}
+25-02-14.00:00:09.952 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardConfig":"1,100","awardId":101}
+25-02-14.00:00:09.968 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-02-14.00:00:09.974 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-02-14.00:01:26.149 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_202 on X with PID 17332 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-14.00:01:26.155 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-02-14.00:01:27.747 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-14.00:01:28.388 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-14.00:01:28.395 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-14.00:01:29.043 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.137 seconds (JVM running for 3.72)
+25-02-14.00:01:29.294 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-14.00:01:30.005 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-14.00:01:30.133 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
+25-02-14.00:01:30.137 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
+25-02-14.00:01:30.141 [main            ] INFO  RaffleStrategyTest     - 测试结果: true
+25-02-14.00:01:30.148 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId：xx strategyId: 100006 ruleModel: rule_default awardId: 102
+25-02-14.00:01:30.149 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xx 100006 102 rule_default
+25-02-14.00:01:30.157 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】 treeId:tree_lock node:rule_lock code:0000
+25-02-14.00:01:30.158 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】 treeId:tree_lock node:rule_stock code:0001
+25-02-14.00:01:30.159 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】 treeId:tree_lock node:rule_luck_award code:0001
+25-02-14.00:01:30.159 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xx 100006 101 1,100
+25-02-14.00:01:30.253 [main            ] INFO  RaffleStrategyTest     - 请求参数： {"strategyId":100006,"userId":"xx"}
+25-02-14.00:01:30.255 [main            ] INFO  RaffleStrategyTest     - 测试结果: {"awardConfig":"1,100","awardId":101}
+25-02-14.00:01:30.274 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-02-14.00:01:30.280 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

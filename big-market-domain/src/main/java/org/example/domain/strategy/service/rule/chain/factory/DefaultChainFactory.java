@@ -1,5 +1,7 @@
 package org.example.domain.strategy.service.rule.chain.factory;
 
+import lombok.*;
+import org.checkerframework.checker.units.qual.N;
 import org.example.domain.strategy.model.entity.StrategyEntity;
 import org.example.domain.strategy.repository.IStrategyRepository;
 import org.example.domain.strategy.service.rule.chain.ILogicChain;
@@ -45,5 +47,27 @@ public class DefaultChainFactory {
         return logicChain;
     }
 
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class StrategyAwardVo {
+        /** 抽奖奖品ID - 内部使用流转 */
+        private Integer awardId;
+        /** */
+        private String logicModel;
+    }
 
+    @Getter
+    @AllArgsConstructor
+    public enum LogicModel {
+
+        RULE_DEFAULT("rule_default","默认抽奖"),
+        RULE_BLACKLIST("rule_blacklist","黑名单抽奖"),
+        RULE_WEIGHT("rule_weight","权重规则")
+        ;
+
+        private final String code;
+        private final String info;
+    }
 }

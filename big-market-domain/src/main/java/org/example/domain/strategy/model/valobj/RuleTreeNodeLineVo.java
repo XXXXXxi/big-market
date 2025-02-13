@@ -18,7 +18,7 @@ import java.util.List;
 public class RuleTreeNodeLineVo {
 
     /** 规则树ID */
-    private Integer treeId;
+    private String treeId;
     /** 规则key节点 from */
     private String ruleNodeFrom;
     /** 规则key节点 to */

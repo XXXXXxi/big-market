@@ -39,7 +39,7 @@ public class DefaultTreeFactory {
     @NoArgsConstructor
     public static class TreeActionEntity {
         private RuleLogicCheckTypeVo ruleLogicCheckType;
-        private StrategyAwardData strategyAwardData;
+        private StrategyAwardVo StrategyAwardVo;
     }
 
 
@@ -47,7 +47,7 @@ public class DefaultTreeFactory {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class StrategyAwardData {
+    public static class StrategyAwardVo {
         /** 抽奖奖品ID - 内部流转使用 */
         private Integer awardId;
         /** 抽奖奖品规则 */
