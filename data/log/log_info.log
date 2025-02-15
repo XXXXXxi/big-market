@@ -1,12 +1,18 @@
-25-01-27.23:26:20.371 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on X with PID 27260 (D:\JavaStudy\big-market\big-market-app\target\classes started by 12135 in D:\JavaStudy\big-market)
-25-01-27.23:26:20.372 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-01-27.23:26:20.647 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[org.example]' package. Please check your configuration.
-25-01-27.23:26:20.812 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-25-01-27.23:26:20.815 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-25-01-27.23:26:20.816 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-01-27.23:26:20.816 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-01-27.23:26:20.905 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-01-27.23:26:20.905 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 515 ms
-25-01-27.23:26:21.167 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-25-01-27.23:26:21.176 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-25-01-27.23:26:21.181 [main            ] INFO  Application            - Started Application in 1.037 seconds (JVM running for 1.901)
+25-02-16.01:02:59.160 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on X with PID 43176 (D:\JavaStudy\big-market\big-market-app\target\classes started by 12135 in D:\JavaStudy\big-market)
+25-02-16.01:02:59.161 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-02-16.01:02:59.762 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-02-16.01:02:59.767 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-02-16.01:02:59.767 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-02-16.01:02:59.767 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-02-16.01:02:59.863 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-02-16.01:02:59.863 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 683 ms
+25-02-16.01:03:00.085 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-16.01:03:00.598 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-16.01:03:00.605 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-16.01:03:00.853 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-02-16.01:03:00.860 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-02-16.01:03:00.866 [main            ] INFO  Application            - Started Application in 1.922 seconds (JVM running for 2.889)
+25-02-16.01:03:05.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
+25-02-16.01:03:10.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
+25-02-16.01:03:15.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
+25-02-16.01:03:20.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
