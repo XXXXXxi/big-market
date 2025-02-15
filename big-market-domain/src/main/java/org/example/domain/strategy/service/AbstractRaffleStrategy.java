@@ -22,7 +22,7 @@ import org.example.types.exception.AppException;
  * @Created by 12135
  */
 @Slf4j
-public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
+public abstract class AbstractRaffleStrategy implements IRaffleStrategy , IRaffleStock{
 
     // 策略仓储服务
     protected IStrategyRepository repository;
