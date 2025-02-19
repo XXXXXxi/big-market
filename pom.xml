@@ -28,6 +28,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>central-repos1</id>
+            <name>Central Repository 2</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
     </repositories>
 
     <properties>
@@ -57,10 +62,18 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.12</version>
+
     </parent>
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/cn.bugstack.middleware/db-router-spring-boot-starter -->
+            <dependency>
+                <groupId>cn.bugstack.middleware</groupId>
+                <artifactId>db-router-spring-boot-starter</artifactId>
+                <version>1.0.4</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -119,7 +132,11 @@
                 <artifactId>redisson</artifactId>
                 <version>3.23.4</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-random</artifactId>
+                <version>4.3.0</version>
+            </dependency>
             <!-- 工程模块 -->
             <dependency>
                 <groupId>org.example</groupId>
