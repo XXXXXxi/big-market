@@ -67,3 +67,74 @@
 25-02-19.21:01:35.801 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
 25-02-19.21:01:36.623 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
 25-02-19.21:01:36.731 [main            ] INFO  RaffleActivityOrderDaoTest - 测试结果：[{"activityId":100301,"activityName":"测试活动","orderId":"538338761476","orderTime":1739969735000,"state":"not_used","strategyId":100006,"userId":"xxx"}]
+25-02-19.22:49:40.305 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 30428 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:49:40.306 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:49:42.090 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:49:42.737 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:49:42.749 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:49:43.504 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 3.452 seconds (JVM running for 4.149)
+25-02-19.22:49:43.639 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:49:44.472 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:50:37.096 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 4292 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:50:37.096 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:50:38.796 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:50:39.443 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:50:39.449 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:50:40.228 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 3.376 seconds (JVM running for 3.987)
+25-02-19.22:50:40.379 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:50:41.181 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:53:55.315 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 26732 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:53:55.316 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:53:57.058 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:53:57.691 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:53:57.697 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:53:58.575 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 3.511 seconds (JVM running for 4.132)
+25-02-19.22:53:58.727 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:53:59.522 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:55:18.721 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 27452 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:55:18.722 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:55:20.390 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:55:21.098 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:55:21.106 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:55:21.987 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 3.511 seconds (JVM running for 4.126)
+25-02-19.22:55:22.173 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:55:23.007 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:55:36.367 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 19192 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:55:36.368 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:55:38.341 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:55:39.049 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:55:39.055 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:55:40.245 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 4.157 seconds (JVM running for 4.951)
+25-02-19.22:55:40.414 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:55:41.215 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:56:51.409 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m40s194ms501µs199ns).
+25-02-19.22:56:51.409 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
+25-02-19.22:56:53.910 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 22700 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:56:53.911 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:56:55.546 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:56:56.182 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:56:56.189 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:56:56.952 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 3.278 seconds (JVM running for 3.872)
+25-02-19.22:56:57.094 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:56:57.879 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:57:13.985 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 30440 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:57:13.986 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:57:15.916 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:57:16.579 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:57:16.586 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:57:17.740 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 4.036 seconds (JVM running for 4.755)
+25-02-19.22:57:17.915 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:57:18.719 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:58:09.251 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m20s530ms633µs200ns).
+25-02-19.22:58:09.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
+25-02-19.22:58:11.910 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_202 on X with PID 29952 (started by 12135 in D:\JavaStudy\big-market\big-market-app)
+25-02-19.22:58:11.910 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+25-02-19.22:58:13.605 [main            ] INFO  Version                - Redisson 3.23.4
+25-02-19.22:58:14.224 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:58:14.232 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-02-19.22:58:14.962 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 3.295 seconds (JVM running for 3.883)
+25-02-19.22:58:15.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不会产生竞争】
+25-02-19.22:58:15.125 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-02-19.22:58:15.942 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-02-19.22:58:16.074 [main            ] INFO  AbstractRaffleActivity - 查询结果：{"activityCountId":11101,"activityId":100301,"sku":9011,"stockCount":0,"stockCountSurplus":0} {"activityDesc":"测试活动","activityId":100301,"activityName":"测试活动","beginDateTime":1709288110000,"endDateTime":2025512110000,"state":"create","strategyId":100006} {"activityCountId":11101,"dayCount":1,"monthCount":1,"totalCount":1}
+25-02-19.22:58:16.077 [main            ] INFO  RaffleOrderTest        - 测试结果: {}
