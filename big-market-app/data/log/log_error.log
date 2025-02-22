@@ -1,2 +1,1 @@
-25-02-19.22:56:51.409 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m40s194ms501µs199ns).
-25-02-19.22:58:09.251 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=1m20s530ms633µs200ns).
+25-02-22.15:57:28.625 [main            ] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: xxx activityId: 100301 sku: 9011
