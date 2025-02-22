@@ -3,10 +3,15 @@ package org.example.test.domain.activity;
 import com.alibaba.fastjson.JSON;
 import com.auth0.jwt.algorithms.Algorithm;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.checkerframework.checker.units.qual.A;
 import org.example.domain.activity.model.entity.ActivityOrderEntity;
 import org.example.domain.activity.model.entity.ActivityShopCartEntity;
 import org.example.domain.activity.model.entity.SkuRechargeEntity;
 import org.example.domain.activity.service.IRaffleOrder;
+import org.example.domain.activity.service.armory.IActivityArmory;
+import org.example.types.exception.AppException;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,6 +35,14 @@ public class RaffleOrderTest {
     @Resource
     private IRaffleOrder raffleOrder;
 
+    @Resource
+    private IActivityArmory activityArmory;
+
+    @Before
+    public void setUp() {
+        log.info("装配结果",activityArmory.assembleActivity(9011L));
+    }
+
     @Test
     public void test_createRaffleActivityOrder() {
         ActivityShopCartEntity activityShopCartEntity = new ActivityShopCartEntity();
@@ -40,7 +53,7 @@ public class RaffleOrderTest {
     }
 
     @Test
-    public void test_createSkuRechargeOrder() {
+    public void test_createSkuRechargeOrder_Duplicate() {
         SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
         skuRechargeEntity.setUserId("xxx");
         skuRechargeEntity.setSku(9011L);
@@ -49,37 +62,21 @@ public class RaffleOrderTest {
         log.info("测试结果：{}",orderId);
     }
 
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer,Integer> hash = new HashMap<Integer,Integer>();
-        int[] ret = new int[2];
-        for (int i = 0; i < nums.length; i++ ) {
-            if (hash.containsKey(target-nums[i])) {
-                ret[0] = hash.get(target-nums[i]);
-                ret[1] = i;
-                return ret;
-            }
-            hash.put(nums[i],i);
-        }
-        return ret;
-    }
-
-    public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> ret = new ArrayList<>();
-        Map<String,List<String>> hash = new HashMap<String,List<String>>();
-        for (String str : strs) {
-            char[] charArray = str.toCharArray();
-            Arrays.sort(charArray);
-            String sortedString = new String(charArray);
-            if (hash.containsKey(sortedString)) {
-                hash.get(sortedString).add(str);
-            } else {
-                List<String> newList = new ArrayList<String>();
-                newList.add(str);
-                ret.add(newList);
-                hash.put(sortedString,newList);
+    @Test
+    public void test_createSkuRechargeOrder() throws InterruptedException {
+        for (int i = 0; i < 20; i++) {
+            try {
+                SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
+                skuRechargeEntity.setUserId("xxx");
+                skuRechargeEntity.setSku(9011L);
+                // outBusinessNo作为幂等防重使用，同一个业务单号2次使用会抛出索引异常
+                skuRechargeEntity.setOutBusinessNo(RandomStringUtils.randomNumeric(12));
+                String orderId = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
+                log.info("测试结果：{}",orderId);
+            } catch (AppException e) {
+                log.warn(e.getInfo());
             }
         }
-        return ret;
     }
 
 }
