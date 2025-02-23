@@ -11,7 +11,7 @@ import org.example.domain.activity.model.entity.SkuRechargeEntity;
  */
 
 
-public interface IRaffleOrder {
+public interface IRaffleActivityAccountQuotaService {
 
     /**
      * 以sku创建抽奖活动订单，获得参与抽奖资格（可消耗次数）

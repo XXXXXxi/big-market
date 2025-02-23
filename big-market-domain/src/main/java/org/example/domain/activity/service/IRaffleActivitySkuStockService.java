@@ -8,7 +8,7 @@ import org.example.domain.activity.model.valobj.ActivitySkuStockKeyVo;
  * @Created by 12135
  */
 
-public interface ISkuStock {
+public interface IRaffleActivitySkuStockService {
 
     /**
      * 获取活动sku库存消耗队列

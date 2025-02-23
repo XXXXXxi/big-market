@@ -1,14 +1,12 @@
 package org.example.test.domain.activity;
 
 import com.alibaba.fastjson.JSON;
-import com.auth0.jwt.algorithms.Algorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.checkerframework.checker.units.qual.A;
 import org.example.domain.activity.model.entity.ActivityOrderEntity;
 import org.example.domain.activity.model.entity.ActivityShopCartEntity;
 import org.example.domain.activity.model.entity.SkuRechargeEntity;
-import org.example.domain.activity.service.IRaffleOrder;
+import org.example.domain.activity.service.IRaffleActivityAccountQuotaService;
 import org.example.domain.activity.service.armory.IActivityArmory;
 import org.example.types.exception.AppException;
 import org.junit.Before;
@@ -18,7 +16,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.util.*;
 
 /**
  * @Classname RaffleOrderTest
@@ -33,7 +30,7 @@ import java.util.*;
 public class RaffleOrderTest {
 
     @Resource
-    private IRaffleOrder raffleOrder;
+    private IRaffleActivityAccountQuotaService raffleOrder;
 
     @Resource
     private IActivityArmory activityArmory;

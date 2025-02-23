@@ -1,10 +1,10 @@
-package org.example.domain.activity.service;
+package org.example.domain.activity.service.quota;
 
 import org.example.domain.activity.model.entity.ActivityCountEntity;
 import org.example.domain.activity.model.entity.ActivityEntity;
 import org.example.domain.activity.model.entity.ActivitySkuEntity;
 import org.example.domain.activity.repository.IActivityRepository;
-import org.example.domain.activity.service.rule.factory.DefaultActivityChainFactory;
+import org.example.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
 /**
  * @Classname RaffleActivitySupport
@@ -12,13 +12,13 @@ import org.example.domain.activity.service.rule.factory.DefaultActivityChainFact
  * @Date 2025/2/20 22:38
  * @Created by 12135
  */
-public class RaffleActivitySupport {
+public class RaffleActivityAccountQuotaSupport {
 
     protected DefaultActivityChainFactory defaultActivityChainFactory;
 
     protected IActivityRepository activityRepository;
 
-    public RaffleActivitySupport(DefaultActivityChainFactory defaultActivityChainFactory, IActivityRepository activityRepository) {
+    public RaffleActivityAccountQuotaSupport(DefaultActivityChainFactory defaultActivityChainFactory, IActivityRepository activityRepository) {
         this.defaultActivityChainFactory = defaultActivityChainFactory;
         this.activityRepository = activityRepository;
     }
