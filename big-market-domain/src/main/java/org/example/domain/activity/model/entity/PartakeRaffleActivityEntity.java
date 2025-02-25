@@ -1,6 +1,9 @@
 package org.example.domain.activity.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Classname PartakeRaffleActivityEntity
@@ -9,6 +12,9 @@ import lombok.Data;
  * @Created by 12135
  */
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PartakeRaffleActivityEntity {
 
     /**

@@ -1,9 +1,6 @@
 package org.example.trigger.api.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @Classname RaffleRequestDTO
@@ -13,7 +10,7 @@ import lombok.NoArgsConstructor;
  */
 
 @Data
-public class RaffleRequestDTO {
+public class RaffleStrategyRequestDTO {
 
     // 抽奖策略ID
     private Long strategyId;

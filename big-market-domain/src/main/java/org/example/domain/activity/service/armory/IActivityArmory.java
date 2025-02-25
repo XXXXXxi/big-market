@@ -9,6 +9,8 @@ package org.example.domain.activity.service.armory;
 
 public interface IActivityArmory {
 
+    boolean assembleActivitySkuByActivityId(Long activityId);
+
     /**
      * 根据sku装配活动信息
      *

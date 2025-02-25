@@ -3,6 +3,8 @@ package org.example.infrastructure.persistent.dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.example.infrastructure.persistent.po.RaffleActivitySku;
 
+import java.util.List;
+
 /**
  * @Classname IRaffleActivitySkuDao
  * @Description 抽奖活动sku dao
@@ -18,4 +20,6 @@ public interface IRaffleActivitySkuDao {
     void updateActivitySkuStock(Long sku);
 
     void clearActivitySkuStock(Long sku);
+
+    List<RaffleActivitySku> queryActivitySkuListByActivityId(Long activityId);
 }

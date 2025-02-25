@@ -130,8 +130,10 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
         return RaffleAwardEntity.builder()
                 .awardId(awardId)
                 .awardConfig(awardConfig)
+                .awardTitle(strategyAwardEntity.getAwardTile())
                 .sort(strategyAwardEntity.getSort())
-                .build();    }
+                .build();
+    }
 
     protected abstract RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doCheckRaffleBeforeLogic(RaffleFactorEntity build, String ...logics);
 

@@ -6,9 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @Classname RaffleResponseDTO
- * @Description 抽奖应答结果
- * @Date 2025/2/15 23:40
+ * @Classname ActivityDrawResponseDTO
+ * @Description TODO
+ * @Date 2025/2/23 21:41
  * @Created by 12135
  */
 
@@ -16,10 +16,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleResponseDTO {
+public class ActivityDrawResponseDTO {
 
-    // 奖品id
+    // 奖品ID
     private Integer awardId;
-    // 排序编号 【策略奖品配置的奖品顺序编号】
+    // 奖品标题
+    private String awardTitle;
+    // 排序编号【策略奖品配置的奖品顺序编号】
     private Integer awardIndex;
+
 }

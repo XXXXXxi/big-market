@@ -39,6 +39,9 @@ import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 public class StrategyRepository implements IStrategyRepository {
 
     @Resource
+    private IRaffleActivityDao raffleActivityDao;
+
+    @Resource
     private IStrategyDao strategyDao;
 
     @Resource
@@ -58,6 +61,9 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Resource
     private IRuleTreeNodeLineDao ruleTreeNodeLineDao;
+
+    @Resource
+    private IRaffleActivityAccountDayDao raffleActivityAccountDayDao;
 
     @Override
     public List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId) {
@@ -308,5 +314,26 @@ public class StrategyRepository implements IStrategyRepository {
         redisService.setValue(cacheKey,strategyAward);
 
         return strategyAward;
+    }
+
+    @Override
+    public Long queryStrategyIdByActivityId(Long activityId) {
+        return raffleActivityDao.queryStrategyIdByActivityId(activityId);
+    }
+
+    @Override
+    public Integer queryTodayUserRaffleCount(String userId, Long strategyId) {
+        // 活动id
+        Long activityId = raffleActivityDao.queryActivityIdByStrategyId(strategyId);
+
+        // 封装对象
+        RaffleActivityAccountDay raffleActivityAccountDayReq = new RaffleActivityAccountDay();
+        raffleActivityAccountDayReq.setUserId(userId);
+        raffleActivityAccountDayReq.setActivityId(activityId);
+        raffleActivityAccountDayReq.setDay(raffleActivityAccountDayReq.currentDay());
+        RaffleActivityAccountDay raffleActivityAccountDay = raffleActivityAccountDayDao.queryActivityAccountDayByUserId(raffleActivityAccountDayReq);
+        if (null == raffleActivityAccountDay) return 0;
+        // 总次数 - 剩余的，等于今日参与的
+        return  raffleActivityAccountDay.getDayCount() - raffleActivityAccountDay.getDayCountSurplus();
     }
 }
