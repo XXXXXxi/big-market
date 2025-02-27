@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 
 /**
  * @Classname ActivitySkuStockActionChain
- * @Description TODO
+ * @Description 活动sku库存消耗
  * @Date 2025/2/20 23:06
  * @Created by 12135
  */
