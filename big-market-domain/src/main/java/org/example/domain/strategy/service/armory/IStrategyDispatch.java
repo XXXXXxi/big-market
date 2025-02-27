@@ -2,6 +2,7 @@ package org.example.domain.strategy.service.armory;
 
 import org.example.domain.strategy.model.entity.StrategyAwardEntity;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,7 +35,8 @@ public interface IStrategyDispatch {
      *
      * @param strategyId    库存ID
      * @param awardId       奖品ID
+     * @param endDateTime   活动结束时间
      * @return  扣减结果
      */
-    Boolean subtractionAwardStock(Long strategyId, Integer awardId);
+    Boolean subtractionAwardStock(Long strategyId, Integer awardId, Date endDateTime);
 }

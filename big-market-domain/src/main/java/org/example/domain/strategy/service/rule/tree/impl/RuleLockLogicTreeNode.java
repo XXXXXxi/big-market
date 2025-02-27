@@ -9,6 +9,7 @@ import org.example.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @Classname RuleLockLogicTreeNode
@@ -27,7 +28,7 @@ public class RuleLockLogicTreeNode implements ILogicTreeNode {
     private IStrategyRepository strategyRepository;
 
     @Override
-    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String ruleValue) {
+    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String ruleValue, Date endDateTime) {
 
         log.info("规则过滤 - 次数锁 userId:{} strategyId:{} awardId:{}", userId, strategyId, awardId);
 

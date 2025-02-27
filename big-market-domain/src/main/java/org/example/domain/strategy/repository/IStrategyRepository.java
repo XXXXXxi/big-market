@@ -8,8 +8,10 @@ import org.example.domain.strategy.model.valobj.StrategyAwardRuleModelVo;
 import org.example.domain.strategy.model.valobj.StrategyAwardStockKeyVo;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Classname IStrategyRepository
@@ -43,6 +45,8 @@ public interface IStrategyRepository {
 
     Boolean subtractionAwardStock(String cacheKey);
 
+    Boolean subtractionAwardStock(String cacheKey, Date endDateTime);
+
     void awardStockConsumeSendQueue(StrategyAwardStockKeyVo strategyAwardStockKeyVo);
 
     StrategyAwardStockKeyVo takeQueueValue();
@@ -54,4 +58,6 @@ public interface IStrategyRepository {
     Long queryStrategyIdByActivityId(Long activityId);
 
     Integer queryTodayUserRaffleCount(String userId, Long strategyId);
+
+    Map<String, Integer> queryAwardRuleLockCount(String[] treeIds);
 }
