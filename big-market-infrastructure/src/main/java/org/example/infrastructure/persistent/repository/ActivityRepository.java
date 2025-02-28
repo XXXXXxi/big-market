@@ -151,7 +151,7 @@ public class ActivityRepository implements IActivityRepository {
         raffleActivityOrder.setState(activityOrderEntity.getState().getCode());
         raffleActivityOrder.setOutBusinessNo(activityOrderEntity.getOutBusinessNo());
 
-        // 账户对象
+        // 总账户对象
         RaffleActivityAccount activityAccount = new RaffleActivityAccount();
         activityAccount.setUserId(activityOrderEntity.getUserId());
         activityAccount.setActivityId(activityOrderEntity.getActivityId());
@@ -162,6 +162,23 @@ public class ActivityRepository implements IActivityRepository {
         activityAccount.setDayCount(createQuotaOrderAggregate.getDayCount());
         activityAccount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
 
+        // 月账户
+        RaffleActivityAccountMonth raffleActivityAccountMonth = new RaffleActivityAccountMonth();
+        raffleActivityAccountMonth.setUserId(createQuotaOrderAggregate.getUserId());
+        raffleActivityAccountMonth.setActivityId(createQuotaOrderAggregate.getActivityId());
+        raffleActivityAccountMonth.setMonth(raffleActivityAccountMonth.currentMonth());
+        raffleActivityAccountMonth.setMonthCount(createQuotaOrderAggregate.getMonthCount());
+        raffleActivityAccountMonth.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
+
+        // 日账户
+        RaffleActivityAccountDay raffleActivityAccountDay = new RaffleActivityAccountDay();
+        raffleActivityAccountDay.setUserId(createQuotaOrderAggregate.getUserId());
+        raffleActivityAccountDay.setActivityId(createQuotaOrderAggregate.getActivityId());
+        raffleActivityAccountDay.setDay(raffleActivityAccountDay.currentDay());
+        raffleActivityAccountDay.setDayCount(createQuotaOrderAggregate.getDayCount());
+        raffleActivityAccountDay.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
+
+
         try {
             // 以用户ID作为切分支，通过 doRouter设定路由,保证了下面的操作，都是同一个链接下，也就保证了事务的特效
             dbRouter.doRouter(createQuotaOrderAggregate.getUserId());
@@ -171,13 +188,19 @@ public class ActivityRepository implements IActivityRepository {
                     // 1. 写入订单
                     raffleActivityOrderDao.insert(raffleActivityOrder);
 
-                    // 2. 更新账户
+                    // 2. 更新总账户
                     int count = raffleActivityAccountDao.updateAccountQuota(activityAccount);
 
                     // 3. 创建账户 - 更新为0， 则账户不存在，创建账户
                     if (0 == count) {
                         raffleActivityAccountDao.insert(activityAccount);
                     }
+
+                    // 4. 更新账户 - 月
+                    raffleActivityAccountMonthDao.addAccountQuota(raffleActivityAccountMonth);
+
+                    // 5. 更新账户 - 日
+                    raffleActivityAccountDayDao.addAccountQuota(raffleActivityAccountDay);
 
                     return 1;
                 } catch (DuplicateKeyException e) {
@@ -200,6 +223,7 @@ public class ActivityRepository implements IActivityRepository {
     @Override
     public boolean subtractionActivitySkuStock(Long sku, String cacheKey, Date endDateTime) {
         long surplus = redisService.decr(cacheKey);
+        log.info("活动sku减一结果 surplus:{}",surplus);
         if (surplus == 0) {
             // 库存消耗没了以后，发送MQ消息，更新数据库库存
             eventPublisher.publish(activitySkuStockZeroMessageEvent.topic(),activitySkuStockZeroMessageEvent.buildEventMessage(sku));

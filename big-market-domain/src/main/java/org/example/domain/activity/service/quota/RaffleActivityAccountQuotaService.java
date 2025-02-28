@@ -40,7 +40,7 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
         activityOrderEntity.setSku(skuRechargeEntity.getSku());
         activityOrderEntity.setActivityName(activityEntity.getActivityName());
         activityOrderEntity.setActivityId(activityEntity.getActivityId());
-        activityOrderEntity.setStrategyId(activityEntity.getActivityId());
+        activityOrderEntity.setStrategyId(activityEntity.getStrategyId());
         activityOrderEntity.setOrderId(RandomStringUtils.randomNumeric(12));
         activityOrderEntity.setOrderTime(new Date());
         activityOrderEntity.setTotalCount(activityCountEntity.getTotalCount());

@@ -44,4 +44,12 @@ public class RaffleActivityControllerTest {
         log.info("请求参数:{}",JSON.toJSONString(requestDTO));
         log.info("测试结果:{}",JSON.toJSONString(response));
     }
+
+    @Test
+    public void test_calenderSignRebate() {
+
+        Response<Boolean> response = raffleActivityService.calenderSignRebate(new String("xxx"));
+
+        log.info("测试结果：{}",JSON.toJSONString(response));
+    }
 }
