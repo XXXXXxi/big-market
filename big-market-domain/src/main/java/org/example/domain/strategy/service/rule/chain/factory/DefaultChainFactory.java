@@ -54,8 +54,10 @@ public class DefaultChainFactory {
     public static class StrategyAwardVo {
         /** 抽奖奖品ID - 内部使用流转 */
         private Integer awardId;
-        /** */
+        /** 抽奖奖品规则 */
         private String logicModel;
+        /** 抽奖奖品值 */
+        private String awardRuleValue;
     }
 
     @Getter

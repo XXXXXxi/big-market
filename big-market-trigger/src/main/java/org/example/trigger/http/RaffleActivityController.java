@@ -160,6 +160,7 @@ public class RaffleActivityController implements IRaffleActivityService {
                     .awardTitle(raffleAwardEntity.getAwardTitle())
                     .awardTime(new Date())
                     .awardState(AwardStateVo.create)
+                    .awardConfig(raffleAwardEntity.getAwardConfig())
                     .build();
             awardService.savaUserAwardRecord(userAwardRecordEntity);
 
@@ -238,7 +239,7 @@ public class RaffleActivityController implements IRaffleActivityService {
     /**
      * 判断是否签到接口
      * <p>
-     * curl -X POST http://localhost:8091/api/v1/raffle/activity/is_calendar_sign_rebate -d "userId=xxx" -H "Content-Type: application/x-www-form-urlencoded"
+     * curl -X POST http://localhost:8091/api/v1/raffle/activity/is_calender_sign_rebate -d "userId=xxx" -H "Content-Type: application/x-www-form-urlencoded"
      */
 
     @RequestMapping(value = "is_calender_sign_rebate", method = RequestMethod.POST)

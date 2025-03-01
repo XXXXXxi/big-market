@@ -1,5 +1,6 @@
 package org.example.domain.award.service;
 
+import org.example.domain.award.model.entity.DistributeAwardEntity;
 import org.example.domain.award.model.entity.UserAwardRecordEntity;
 
 /**
@@ -11,4 +12,7 @@ import org.example.domain.award.model.entity.UserAwardRecordEntity;
 public interface IAwardService {
 
     void savaUserAwardRecord(UserAwardRecordEntity userAwardRecordEntity);
+
+    void distributeAward(DistributeAwardEntity distributeAwardEntity);
+
 }

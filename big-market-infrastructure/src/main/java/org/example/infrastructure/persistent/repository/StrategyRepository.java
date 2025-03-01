@@ -245,7 +245,7 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Override
     public void cacheStrategyAwardCount(String cacheKey, Integer awardCount) {
-        if (null != redisService.getValue(cacheKey)) {
+        if ( redisService.isExists(cacheKey)) {
             return ;
         }
         redisService.setAtomicLong(cacheKey,awardCount);

@@ -1,5 +1,6 @@
 package org.example.domain.award.repository;
 
+import org.example.domain.award.model.aggregate.GiveOutPrizeAggregate;
 import org.example.domain.award.model.aggregate.UserAwardRecordAggregate;
 
 /**
@@ -10,4 +11,10 @@ import org.example.domain.award.model.aggregate.UserAwardRecordAggregate;
 public interface IAwardRepository {
 
     void saveUserAwardRecord(UserAwardRecordAggregate userAwardRecordAggregate);
+
+    String queryAwardConfig(Integer awardId);
+
+    void savaGiveOutPrizesAggregate(GiveOutPrizeAggregate giveOutPrizeAggregate);
+
+    String queryAwardKey(Integer awardId);
 }
