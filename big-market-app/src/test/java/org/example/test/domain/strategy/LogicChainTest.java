@@ -47,7 +47,7 @@ public class LogicChainTest {
     @Test
     public void test_LogicChain_rule_weight() {
 
-        ReflectionTestUtils.setField(ruleWeightLogicChain,"userScore",4900L);
+//        ReflectionTestUtils.setField(ruleWeightLogicChain,"userScore",4900L);
 
         ILogicChain logicChain = defaultChainFactory.openLogicChain(10001L);
         DefaultChainFactory.StrategyAwardVo strategyAwardVo = logicChain.logic("xxx", 10001L);

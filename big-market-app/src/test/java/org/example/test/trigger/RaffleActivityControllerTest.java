@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.trigger.api.IRaffleActivityService;
 import org.example.trigger.api.dto.ActivityDrawRequestDTO;
 import org.example.trigger.api.dto.ActivityDrawResponseDTO;
+import org.example.trigger.api.dto.UserActivityAccountRequestDTO;
+import org.example.trigger.api.dto.UserActivityAccountResponseDTO;
 import org.example.types.model.Response;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,4 +54,25 @@ public class RaffleActivityControllerTest {
 
         log.info("测试结果：{}",JSON.toJSONString(response));
     }
+
+    @Test
+    public void test_isCalendarSignRebate() {
+        Response<Boolean> response = raffleActivityService.isCalenderSignRebate("xxx");
+        log.info("测试结果：{}", JSON.toJSONString(response));
+    }
+
+    @Test
+    public void test_queryUserActivityAccount() {
+        UserActivityAccountRequestDTO request = new UserActivityAccountRequestDTO();
+        request.setActivityId(100301L);
+        request.setUserId("xxx");
+
+        // 查询数据
+        Response<UserActivityAccountResponseDTO> response = raffleActivityService.queryUserActivityAccount(request);
+
+        log.info("请求参数：{}", JSON.toJSONString(request));
+        log.info("测试结果：{}", JSON.toJSONString(response));
+    }
+
+
 }

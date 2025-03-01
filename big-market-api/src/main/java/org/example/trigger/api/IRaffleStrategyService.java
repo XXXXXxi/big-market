@@ -1,11 +1,9 @@
 package org.example.trigger.api;
 
-import org.example.trigger.api.dto.RaffleAwardListRequestDTO;
-import org.example.trigger.api.dto.RaffleAwardListResponseDTO;
-import org.example.trigger.api.dto.RaffleStrategyRequestDTO;
-import org.example.trigger.api.dto.RaffleStrategyResponseDTO;
+import org.example.trigger.api.dto.*;
 import org.example.types.model.Response;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -40,4 +38,6 @@ public interface IRaffleStrategyService {
      * @return  抽奖接口
      */
     Response<RaffleStrategyResponseDTO> randomRaffle(RaffleStrategyRequestDTO requestDTO);
+
+    Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(RaffleStrategyRuleWeightRequestDTO requestDTO);
 }

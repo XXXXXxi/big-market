@@ -1,5 +1,8 @@
 package org.example.domain.strategy.service;
 
+import org.example.domain.strategy.model.valobj.RuleWeightVo;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,4 +15,7 @@ public interface IRaffleRule {
 
     Map<String,Integer> queryAwardRuleLockCount(String[] treeIds);
 
+    List<RuleWeightVo> queryAwardRuleWeight(Long strategyId);
+
+    List<RuleWeightVo> queryAwardRuleWeightByActivityId(Long activityId);
 }

@@ -7,6 +7,7 @@ import org.example.domain.strategy.model.entity.StrategyEntity;
 import org.example.domain.strategy.model.entity.StrategyRuleEntity;
 import org.example.domain.strategy.model.valobj.*;
 import org.example.domain.strategy.repository.IStrategyRepository;
+import org.example.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import org.example.infrastructure.persistent.dao.*;
 import org.example.infrastructure.persistent.po.*;
 import org.example.infrastructure.persistent.redis.IRedisService;
@@ -61,6 +62,9 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Resource
     private IRaffleActivityAccountDayDao raffleActivityAccountDayDao;
+
+    @Resource
+    private IRaffleActivityAccountDao raffleActivityAccountDao;
 
     @Override
     public List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId) {
@@ -362,5 +366,66 @@ public class StrategyRepository implements IStrategyRepository {
             result.put(treeId,ruleValue);
         }
         return result;
+    }
+
+    @Override
+    public Integer queryActivityAccountTotalUserCount(String userId, Long strategyId) {
+        Long activityId = raffleActivityDao.queryActivityIdByStrategyId(strategyId);
+        RaffleActivityAccount raffleActivityAccount = raffleActivityAccountDao.queryActivityAccountByUserId(RaffleActivityAccount.builder()
+                .userId(userId)
+                .activityId(activityId)
+                .build());
+        if (null == raffleActivityAccount) {
+            return 0;
+        }
+        return raffleActivityAccount.getTotalCount() - raffleActivityAccount.getTotalCountSurplus();
+    }
+
+    @Override
+    public List<RuleWeightVo> queryAwardRuleWeight(Long strategyId) {
+        // 优先从缓存中获取
+        String cacheKey = Constants.RedisKey.STRATEGY_RULE_WEIGHT_KEY + strategyId;
+        List<RuleWeightVo> ruleWeightVos = redisService.getValue(cacheKey);
+        if (null != ruleWeightVos) return ruleWeightVos;
+
+        ruleWeightVos = new ArrayList<>();
+        // 1. 查询权重规则配置
+        StrategyRule strategyRuleReq = new StrategyRule();
+        strategyRuleReq.setStrategyId(strategyId);
+        strategyRuleReq.setRuleModel(DefaultChainFactory.LogicModel.RULE_WEIGHT.getCode());
+        String ruleValue = strategyRuleDao.queryStrategyRuleValue(strategyRuleReq);
+        // 2. 借助实体对象转换规则
+        StrategyRuleEntity strategyRuleEntity = new StrategyRuleEntity();
+        strategyRuleEntity.setRuleModel(DefaultChainFactory.LogicModel.RULE_WEIGHT.getCode());
+        strategyRuleEntity.setRuleValue(ruleValue);
+        Map<String, List<Integer>> ruleWeightValues = strategyRuleEntity.getRuleWeightValues();
+
+        Set<String> ruleWeightKeys = ruleWeightValues.keySet();
+        for (String ruleWeightKey : ruleWeightKeys) {
+            List<Integer> awardIds = ruleWeightValues.get(ruleWeightKey);
+            List<RuleWeightVo.Award> awardList = new ArrayList<>();
+            for (Integer award : awardIds) {
+                StrategyAward strategyAwardReq = new StrategyAward();
+                strategyAwardReq.setStrategyId(strategyId);
+                strategyAwardReq.setAwardId(award);
+                StrategyAward strategyAward = strategyAwardDao.queryStrategyAward(strategyAwardReq);
+                awardList.add(RuleWeightVo.Award.builder()
+                                .awardId(strategyAward.getAwardId())
+                                .awardTitle(strategyAward.getAwardTile())
+                                .build());
+            }
+
+            ruleWeightVos.add(RuleWeightVo.builder()
+                            .ruleValue(ruleValue)
+                            .weight(Integer.valueOf(ruleWeightKey.split(Constants.COLON)[0]))
+                            .awardIds(awardIds)
+                            .awardList(awardList)
+                            .build());
+        }
+
+
+        redisService.setValue(cacheKey,ruleWeightVos);
+
+        return ruleWeightVos;
     }
 }
