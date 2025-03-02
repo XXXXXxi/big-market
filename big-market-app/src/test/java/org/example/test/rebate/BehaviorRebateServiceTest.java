@@ -35,7 +35,7 @@ public class BehaviorRebateServiceTest {
         behaviorEntity.setUserId("xxx");
         behaviorEntity.setBehaviorTypeVo(BehaviorTypeVo.SIGN);
 
-        behaviorEntity.setOutBusinessNo("20250262");
+        behaviorEntity.setOutBusinessNo("20250270");
 
         List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
 
