@@ -1,14 +1,19 @@
 package org.example.infrastructure.persistent.repository;
 
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.example.domain.award.model.valobj.AccountStateVo;
 import org.example.domain.credit.model.aggregate.TradeAggregate;
 import org.example.domain.credit.model.enetity.CreditAccountEntity;
 import org.example.domain.credit.model.enetity.CreditOrderEntity;
+import org.example.domain.credit.model.enetity.TaskEntity;
 import org.example.domain.credit.repository.ICreditRepository;
+import org.example.infrastructure.event.EventPublisher;
+import org.example.infrastructure.persistent.dao.ITaskDao;
 import org.example.infrastructure.persistent.dao.IUserCreditAccountDao;
 import org.example.infrastructure.persistent.dao.IUserCreditOrderDao;
+import org.example.infrastructure.persistent.po.Task;
 import org.example.infrastructure.persistent.po.UserCreditAccount;
 import org.example.infrastructure.persistent.po.UserCreditOrder;
 import org.example.infrastructure.persistent.redis.IRedisService;
@@ -41,12 +46,18 @@ public class CreditRepository implements ICreditRepository {
 
     private TransactionTemplate transactionTemplate;
 
-    public CreditRepository(IRedisService redisService, IUserCreditAccountDao userCreditAccountDao, IUserCreditOrderDao userCreditOrderDao, IDBRouterStrategy dbRouter, TransactionTemplate transactionTemplate) {
+    private ITaskDao taskDao;
+
+    private EventPublisher eventPublisher;
+
+    public CreditRepository(IRedisService redisService, IUserCreditAccountDao userCreditAccountDao, IUserCreditOrderDao userCreditOrderDao, IDBRouterStrategy dbRouter, TransactionTemplate transactionTemplate, ITaskDao taskDao, EventPublisher eventPublisher) {
         this.redisService = redisService;
         this.userCreditAccountDao = userCreditAccountDao;
         this.userCreditOrderDao = userCreditOrderDao;
         this.dbRouter = dbRouter;
         this.transactionTemplate = transactionTemplate;
+        this.taskDao = taskDao;
+        this.eventPublisher = eventPublisher;
     }
 
     @Override
@@ -54,6 +65,7 @@ public class CreditRepository implements ICreditRepository {
         String userId = tradeAggregate.getUserId();
         CreditAccountEntity creditAccountEntity = tradeAggregate.getCreditAccountEntity();
         CreditOrderEntity creditOrderEntity = tradeAggregate.getCreditOrderEntity();
+        TaskEntity taskEntity = tradeAggregate.getTaskEntity();
 
         // 积分账户
         UserCreditAccount userCreditAccountReq = new UserCreditAccount();
@@ -71,6 +83,14 @@ public class CreditRepository implements ICreditRepository {
         userCreditOrderReq.setTradeAmount(creditOrderEntity.getTradeAmount());
         userCreditOrderReq.setOutBusinessNo(creditOrderEntity.getOutBusinessNo());
 
+        // 任务订单
+        Task task = new Task();
+        task.setUserId(userId);
+        task.setTopic(taskEntity.getTopic());
+        task.setMessageId(taskEntity.getMessageId());
+        task.setMessage(JSON.toJSONString(taskEntity.getMessage()));
+        task.setState(taskEntity.getState().getCode());
+
         RLock lock = redisService.getLock(Constants.RedisKey.USER_CREDIT_ACCOUNT_LOCK + userId + Constants.UNDERLINE + creditOrderEntity.getOutBusinessNo());
 
         try {
@@ -78,6 +98,7 @@ public class CreditRepository implements ICreditRepository {
             dbRouter.doRouter(userId);
             transactionTemplate.execute(status -> {
                try {
+                   // 1. 保存客户积分
                     UserCreditAccount userCreditAccount = userCreditAccountDao.queryUserCreditAccount(userCreditAccountReq);
                     if (null == userCreditAccount) {
                         userCreditAccountReq.setAccountStatus(AccountStateVo.open.getCode());
@@ -85,8 +106,11 @@ public class CreditRepository implements ICreditRepository {
                     } else {
                         userCreditAccountDao.updateAddAmount(userCreditAccountReq);
                     }
-
+                    // 2. 保存客户订单
                     userCreditOrderDao.insert(userCreditOrderReq);
+
+                    // 3. 写入任务
+                   taskDao.insert(task);
                    return 1;
                }
                catch (DuplicateKeyException e) {
@@ -99,11 +123,19 @@ public class CreditRepository implements ICreditRepository {
                }
                 return 1;
             });
-        } catch (Exception e) {
+        } finally {
             dbRouter.clear();
             lock.unlock();
         }
-
-
+        try {
+            // 发送消息【在事务外执行，如果失败还有任务补偿】
+            eventPublisher.publish(task.getTopic(), task.getMessage());
+            // 更新数据库记录，task任务表
+            taskDao.updateTaskSendMessageCompleted(task);
+            log.info("调整用户积分记录，发送MQ消息完成 userId:{} orderId:{} topic:{}",userId,task.getTopic());
+        } catch ( Exception e ) {
+            log.error("调整用户积分记录，发送MQ消息失败 userId:{}  topic:{}",userId,task.getTopic());
+            taskDao.updateTaskSendMessageFail(task);
+        }
     }
 }

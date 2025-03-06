@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import org.example.domain.activity.model.entity.ActivityOrderEntity;
+import org.example.domain.activity.model.valobj.OrderStateVo;
 
 /**
  * @Classname CreateOrderAggregate
@@ -47,5 +48,10 @@ public class CreateQuotaOrderAggregate {
      * 活动订单实体
      */
     private ActivityOrderEntity activityOrderEntity;
+
+
+    public void setOrderState(OrderStateVo orderState) {
+        this.activityOrderEntity.setState(orderState);
+    }
 
 }

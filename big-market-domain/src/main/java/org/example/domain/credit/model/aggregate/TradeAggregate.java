@@ -5,10 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang.RandomStringUtils;
+import org.example.domain.award.model.valobj.TaskStateVo;
+import org.example.domain.credit.event.CreditAdjustSuccessMessageEvent;
 import org.example.domain.credit.model.enetity.CreditAccountEntity;
 import org.example.domain.credit.model.enetity.CreditOrderEntity;
+import org.example.domain.credit.model.enetity.TaskEntity;
 import org.example.domain.credit.model.valobj.TradeNameVo;
 import org.example.domain.credit.model.valobj.TradeTypeVo;
+import org.example.types.event.BaseEvent;
 
 import java.math.BigDecimal;
 
@@ -25,11 +29,17 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class TradeAggregate {
 
+    // 用户id
     private String userId;
 
+    // 积分账户实体
     private CreditAccountEntity creditAccountEntity;
 
+    // 积分订单实体
     private CreditOrderEntity creditOrderEntity;
+
+    // 任务实体 - 补偿MQ消息
+    private TaskEntity taskEntity;
 
     public static CreditAccountEntity createCreditAccountEntity(String userId, BigDecimal adjustAmount) {
         return CreditAccountEntity.builder()
@@ -51,6 +61,17 @@ public class TradeAggregate {
                 .tradeAmount(tradeAmount)
                 .outBusinessNo(outBusinessNo)
                 .build();
+    }
+
+    public static TaskEntity createTaskEntity(String userId, String topic, String messageId, BaseEvent.EventMessage<CreditAdjustSuccessMessageEvent.CreditAdjustSuccessMessage> message) {
+        TaskEntity taskEntity = new TaskEntity();
+        taskEntity.setUserId(userId);
+        taskEntity.setTopic(topic);
+        taskEntity.setMessageId(messageId);
+        taskEntity.setMessage(message);
+        taskEntity.setState(TaskStateVo.create);
+        return taskEntity;
+
     }
 
 }

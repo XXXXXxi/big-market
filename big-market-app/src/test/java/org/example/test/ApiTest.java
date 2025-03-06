@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 @RunWith(SpringRunner.class)
@@ -33,6 +35,20 @@ public class ApiTest {
         map.put(10,105);
 //        log.info("测试结果：{}",redisService.getFromMap("strategy_id_10001",1).toString());
 
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        Map<Character,Integer> hash = new HashMap<>();
+        int ret = 0;
+        int left = 0;
+        for (int i = 0;i < s.length();i++) {
+            if (hash.containsKey(s.charAt(i))) {
+                left = Math.max(left,hash.get(s.charAt(i)));
+                ret = Math.max(ret, (i - left));
+            }
+            hash.put(s.charAt(i),i);
+        }
+        return ret;
     }
 
 }

@@ -10,6 +10,14 @@ import org.example.domain.credit.model.enetity.TradeEntity;
 
 public interface ICreditAdjustService {
 
+    /**
+     * 创建增加积分额度订单
+     *
+     * @param tradeEntity
+     * @return
+     */
     String createOrder(TradeEntity tradeEntity);
+
+
 
 }

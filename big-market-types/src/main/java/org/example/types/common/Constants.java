@@ -24,6 +24,7 @@ public class Constants {
         public static String ACTIVITY_COUNT_KEY = "big_market_activity_count_key_";
         public static String ACTIVITY_SKU_STOCK_QUEUE_KEY = "activity_sku_stock_queue_key";
         public static String ACTIVITY_SKU_STOCK_COUNT_KEY = "activity_sku_stock_count_key_";
+        public static String ACTIVITY_ACCOUNT_UPDATE_LOCK = "activity_account_update_lock_";
 
         public static String USER_CREDIT_ACCOUNT_LOCK = "big_market_user_credit_account_lock_";
 
