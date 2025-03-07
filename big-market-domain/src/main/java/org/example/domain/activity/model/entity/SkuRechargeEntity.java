@@ -1,6 +1,9 @@
 package org.example.domain.activity.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.example.domain.activity.model.valobj.OrderTradeTypeVo;
 
 /**
@@ -11,6 +14,9 @@ import org.example.domain.activity.model.valobj.OrderTradeTypeVo;
  */
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class SkuRechargeEntity {
 
     /** 用户ID */

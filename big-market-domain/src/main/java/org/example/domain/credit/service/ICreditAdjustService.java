@@ -1,5 +1,6 @@
 package org.example.domain.credit.service;
 
+import org.example.domain.credit.model.enetity.CreditAccountEntity;
 import org.example.domain.credit.model.enetity.TradeEntity;
 
 /**
@@ -19,5 +20,5 @@ public interface ICreditAdjustService {
     String createOrder(TradeEntity tradeEntity);
 
 
-
+    CreditAccountEntity queryUserCreditAccount(String userId);
 }

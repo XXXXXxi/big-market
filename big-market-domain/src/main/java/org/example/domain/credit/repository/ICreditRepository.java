@@ -1,6 +1,7 @@
 package org.example.domain.credit.repository;
 
 import org.example.domain.credit.model.aggregate.TradeAggregate;
+import org.example.domain.credit.model.enetity.CreditAccountEntity;
 
 /**
  * @Description 用户积分仓储
@@ -10,4 +11,6 @@ import org.example.domain.credit.model.aggregate.TradeAggregate;
 
 public interface ICreditRepository {
     void savaUserCreditTradeOrder(TradeAggregate tradeAggregate);
+
+    CreditAccountEntity queryUserCreditAccount(String userId);
 }

@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.example.domain.activity.model.entity.ActivityOrderEntity;
 import org.example.domain.activity.model.entity.ActivityShopCartEntity;
 import org.example.domain.activity.model.entity.SkuRechargeEntity;
+import org.example.domain.activity.model.entity.UnpaidActivityOrderEntity;
 import org.example.domain.activity.service.IRaffleActivityAccountQuotaService;
 import org.example.domain.activity.service.armory.IActivityArmory;
 import org.example.types.exception.AppException;
@@ -55,8 +56,8 @@ public class RaffleOrderTest {
         skuRechargeEntity.setUserId("xxx");
         skuRechargeEntity.setSku(9011L);
         skuRechargeEntity.setOutBusinessNo("700091009114");
-        String orderId = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
-        log.info("测试结果：{}",orderId);
+        UnpaidActivityOrderEntity skuRechargeOrder = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
+        log.info("测试结果：{}",JSON.toJSONString(skuRechargeOrder));
     }
 
     @Test
@@ -68,8 +69,8 @@ public class RaffleOrderTest {
                 skuRechargeEntity.setSku(9011L);
                 // outBusinessNo作为幂等防重使用，同一个业务单号2次使用会抛出索引异常
                 skuRechargeEntity.setOutBusinessNo(RandomStringUtils.randomNumeric(12));
-                String orderId = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
-                log.info("测试结果：{}",orderId);
+                UnpaidActivityOrderEntity skuRechargeOrder = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
+                log.info("测试结果：{}",JSON.toJSONString(skuRechargeOrder));
             } catch (AppException e) {
                 log.warn(e.getInfo());
             }
